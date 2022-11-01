@@ -10,8 +10,15 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons'
+import {Collapse} from 'react-collapse';
 
 export const LandingPage = () => {
+  const [isOpened, setIsOpened] = useState(false)
+
+  const triggerOpen = () => {
+    isOpened === false ? setIsOpened(true) : setIsOpened(false)
+  }
+
   const [dataJenis, setDataJenis] = useState([])
   const [dataKategori, setDataKategori] = useState([])
 
@@ -65,12 +72,31 @@ export const LandingPage = () => {
             <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700"> 
               {
                 dataJenis.map((item,index) => (
+                  <>
                   <li key={index}>
-                    <a href="#" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <FontAwesomeIcon icon={faBookOpen} />
-                    <span className="flex-1 ml-3 whitespace-nowrap">{item.title}</span>
-                    </a>
+                    <button onClick={triggerOpen} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <FontAwesomeIcon icon={faBookOpen} />
+                      <span className="flex-1 ml-3 whitespace-nowrap">{item.title}</span>
+                    </button>
+                    <Collapse isOpened={isOpened}>
+                      {dataKategori.map((kategori, key) => (
+                        <>
+                        <ul>
+                          <li>
+                            {
+                              item._id === kategori.idJenis._id ? (
+                                <a>{kategori.title}</a>
+                              ) : (
+                                ''
+                              )
+                            }
+                          </li>
+                        </ul>
+                        </>
+                      ))}
+                    </Collapse>
                   </li>    
+                  </>
                 ))
               }     
               </ul> 

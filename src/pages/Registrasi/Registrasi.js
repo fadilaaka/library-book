@@ -48,7 +48,7 @@ export const Registrasi = () => {
                     <label className="text-sm">Nomor Telepon</label>
                     <input className='text-xs lg:text-base rounded-lg bg-gray-900 mt-1 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' 
                     type="text"
-                    name="telp"
+                    telp="telp"
                     value={telp}
                     onChange={e => setTelp(e.target.value)}/>
                   </div>
@@ -59,7 +59,7 @@ export const Registrasi = () => {
                     <label className="text-sm">Alamat</label>
                     <textarea className="text-xs lg:text-base rounded-lg bg-gray-900 mt-1 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
                     type="text"
-                    name="alamat" 
+                    alamat="alamat" 
                     value={alamat}
                     onChange={e => setAlamat(e.target.value)}/>
                   </div>
@@ -70,7 +70,7 @@ export const Registrasi = () => {
                     <label className="text-sm">Username</label>
                     <input className='text-xs lg:text-base rounded-lg bg-gray-900 mt-1 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' 
                     type="text"
-                    name="username" 
+                    username="username" 
                     value={username}
                     onChange={e => setUsername(e.target.value)}/> 
                   </div>
@@ -78,7 +78,7 @@ export const Registrasi = () => {
                     <label className="text-sm">Password</label>
                     <input className='text-xs lg:text-base rounded-lg bg-gray-900 mt-1 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' 
                     type="password"
-                    name="password" 
+                    password="password" 
                     value={password}
                     onChange={e => setPassword(e.target.value)}/> 
                   </div>
