@@ -25,6 +25,7 @@ export const Login = () => {
         username: username,
         password: password,
       });
+      console.log(res);
       await localStorage.setItem("user-info", JSON.stringify(res.data.anggota));
       navigate("/dashboard");
     } catch (error) {

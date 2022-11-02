@@ -13,12 +13,12 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={isLoggedIn ? <LandingPage /> : <Login />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/registrasi" element={<Registrasi />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/peminjaman-buku" element={<PeminjamanBuku />} />
+        <Route path="/peminjaman/:idBook" element={<PeminjamanBuku />} />
         <Route path="/test" element={<Test />} />
       </Routes>
     </div>
