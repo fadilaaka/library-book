@@ -3,9 +3,9 @@ import { LandingPage } from "./pages/LandingPage/LandingPage";
 import { About } from "./pages/About/About";
 import { Registrasi } from "./pages/Registrasi/Registrasi";
 import { Login } from "./pages/Login/Login";
-import { Test } from "./pages/Test/Test";
 import { PeminjamanBuku } from "./pages/PeminjamanBuku/PeminjamanBuku";
 import { useEffect } from "react";
+import { ListPeminjaman } from "./pages/ListPeminjaman/ListPeminjaman";
 
 function App() {
   const isLoggedIn = localStorage.getItem("user-info");
@@ -19,7 +19,7 @@ function App() {
         <Route path="/registrasi" element={<Registrasi />} />
         <Route path="/login" element={<Login />} />
         <Route path="/peminjaman/:idBook" element={<PeminjamanBuku />} />
-        <Route path="/test" element={<Test />} />
+        <Route path="/list-peminjaman" element={<ListPeminjaman />} />
       </Routes>
     </div>
   );

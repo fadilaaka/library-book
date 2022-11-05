@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import userImg from "../../assets/user.png";
 import bookImg from "../../assets/book.jpg";
-import coverImg from "../../assets/cover-dune.jpg";
 import axios from "axios";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,6 +29,7 @@ export const LandingPage = () => {
   const getJenis = async () => {
     try {
       const res = await axios.get(`${url}/v1/api/homepage`);
+      console.log(res);
       await setDataJenis(res.data.jenis);
     } catch (error) {
       console.log(error);
@@ -79,7 +79,7 @@ export const LandingPage = () => {
       </a>
       <section className="flex">
         <div className="overflow-y-auto py-4 px-3 bg-gray-50 dark:bg-gray-800 min-h-screen w-72">
-          <img src={userImg} className="mr-3 h-24 p-2" alt="Flowbite Logo" />
+          <img src={userImg} className="mr-3 h-24 p-2" alt="" />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
             {dataUser && dataUser.name}
           </span>
@@ -94,6 +94,7 @@ export const LandingPage = () => {
               </a>
             </li>
           </ul>
+
           <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
             {dataJenis.map((item, index) => (
               <li key={index}>
@@ -130,7 +131,7 @@ export const LandingPage = () => {
           <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
             <li>
               <Link
-                to="/peminjaman"
+                to="/list-peminjaman"
                 className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <FontAwesomeIcon icon={faCalendarDays} />
@@ -205,7 +206,7 @@ export const LandingPage = () => {
             </div>
           </div>
           <div className="w-full p-7 flex flex-row">
-            <a className="flex flex-col items-center rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <a className="flex flex-col items-center rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-300 dark:border-gray-700 bg-gray-50 dark:hover:bg-gray-700">
               <img
                 className="object-cover w-full rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                 src={bookImg}
@@ -228,7 +229,7 @@ export const LandingPage = () => {
                 <div>
                   <h5
                     id={kategori.title}
-                    className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white bg-blue-600 px-4 py-2 rounded-xl"
+                    className="mb-2 text-2xl font-bold tracking-tight text-white bg-gray-600 px-4 py-2 rounded-xl"
                   >
                     {kategori.title}
                   </h5>
