@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import userImg from "../../assets/user.png";
 import bookImg from "../../assets/book.jpg";
 import axios from "axios";
-import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
@@ -109,20 +108,16 @@ export const LandingPage = () => {
                     </span>
                   </button>
                   <Collapse isOpened={isOpened}>
-                    {dataKategori &&
-                      dataKategori.map((kategori, index) => (
+                    {jenis.idKategori &&
+                      jenis.idKategori.map((item, index) => (
                         <ul key={index}>
                           <li>
-                            {jenis._id == kategori.idJenis._id ? (
-                              <a
-                                href={`#${kategori.title}`}
-                                className="text-slate-500"
-                              >
-                                {kategori.title}
-                              </a>
-                            ) : (
-                              ""
-                            )}
+                            <a
+                              href={`#${item.title}`}
+                              className="text-slate-500"
+                            >
+                              {item.title}
+                            </a>
                           </li>
                         </ul>
                       ))}
@@ -161,39 +156,6 @@ export const LandingPage = () => {
           className="text-xl text-gray-900 font-semibold bg-gray-200 w-full"
         >
           <div className="w-full m-7 flex flex-row">
-            <div className="w-5/6">
-              <form>
-                <div className="relative">
-                  <input
-                    type="search"
-                    id="default-search"
-                    className="rounded-full block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-full border border-gray-300 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
-                    placeholder="Cari buku berdasarkan judul, author, genre..."
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="text-white absolute right-2.5 bottom-2.5 bg-gray-200 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                  >
-                    <svg
-                      className="w-5 h-5 text-gray-500 dark:text-gray-400 hover:text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </form>
-            </div>
-
             <div className="w-1/6">
               {!localStorage.getItem("user-info") && (
                 <Link to="/login">
@@ -208,7 +170,7 @@ export const LandingPage = () => {
             </div>
           </div>
           <div className="w-full p-7 flex flex-row">
-            <a className="flex flex-col items-center rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-300 dark:border-gray-700 bg-gray-50 dark:hover:bg-gray-700">
+            <div className="flex flex-col items-center rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-300 dark:border-gray-700 bg-gray-50 dark:hover:bg-gray-700">
               <img
                 className="object-cover w-full rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                 src={bookImg}
@@ -222,7 +184,7 @@ export const LandingPage = () => {
                   Welcome to Library Buddy
                 </p>
               </div>
-            </a>
+            </div>
           </div>
 
           <div className="w-full p-5 flex flex-col">
