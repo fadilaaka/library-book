@@ -24,7 +24,7 @@ export const LandingPage = () => {
   const [dataKategori, setDataKategori] = useState([]);
   const [dataUser, setDataUser] = useState([]);
 
-  const url = "https://frightful-phantom-89997.herokuapp.com";
+  const url = "http://localhost:5000";
 
   const getJenis = async () => {
     try {
@@ -96,37 +96,39 @@ export const LandingPage = () => {
           </ul>
 
           <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
-            {dataJenis.map((item, index) => (
-              <li key={index}>
-                <button
-                  onClick={triggerOpen}
-                  className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                >
-                  <FontAwesomeIcon icon={faBookOpen} />
-                  <span className="flex-1 ml-3 whitespace-nowrap">
-                    {item.title}
-                  </span>
-                </button>
-                <Collapse isOpened={isOpened}>
-                  {dataKategori.map((kategori, index) => (
-                    <ul key={index}>
-                      <li>
-                        {item._id === kategori.idJenis._id ? (
-                          <a
-                            href={`#${kategori.title}`}
-                            className="text-slate-500"
-                          >
-                            {kategori.title}
-                          </a>
-                        ) : (
-                          ""
-                        )}
-                      </li>
-                    </ul>
-                  ))}
-                </Collapse>
-              </li>
-            ))}
+            {dataJenis &&
+              dataJenis.map((jenis, index) => (
+                <li key={index}>
+                  <button
+                    onClick={triggerOpen}
+                    className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                  >
+                    <FontAwesomeIcon icon={faBookOpen} />
+                    <span className="flex-1 ml-3 whitespace-nowrap">
+                      {jenis.title}
+                    </span>
+                  </button>
+                  <Collapse isOpened={isOpened}>
+                    {dataKategori &&
+                      dataKategori.map((kategori, index) => (
+                        <ul key={index}>
+                          <li>
+                            {jenis._id == kategori.idJenis._id ? (
+                              <a
+                                href={`#${kategori.title}`}
+                                className="text-slate-500"
+                              >
+                                {kategori.title}
+                              </a>
+                            ) : (
+                              ""
+                            )}
+                          </li>
+                        </ul>
+                      ))}
+                  </Collapse>
+                </li>
+              ))}
           </ul>
           <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
             <li>
@@ -243,7 +245,7 @@ export const LandingPage = () => {
                       <a href={`/peminjaman/${buku._id}`}>
                         <img
                           className="rounded-t-lg"
-                          src={`https://frightful-phantom-89997.herokuapp.com/${buku.imageUrl}`}
+                          src={`http://localhost:5000/${buku.imageUrl}`}
                           alt=""
                         />
                       </a>

@@ -21,7 +21,7 @@ export const PeminjamanBuku = () => {
   const [pengembalian, setPengembalian] = useState();
   const [idAnggota, setIdUser] = useState();
 
-  const url = "https://frightful-phantom-89997.herokuapp.com";
+  const url = "http://localhost:5000";
 
   const getDetailBuku = async (id) => {
     try {
@@ -76,7 +76,7 @@ export const PeminjamanBuku = () => {
         <div className="flex flex-row">
           <div className="w-2/6 p-10">
             <img
-              src={`https://frightful-phantom-89997.herokuapp.com/${dataBuku.imageUrl}`}
+              src={`http://localhost:5000/${dataBuku.imageUrl}`}
               className="w-48 h-auto float-right"
             ></img>
           </div>

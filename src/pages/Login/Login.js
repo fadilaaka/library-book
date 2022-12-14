@@ -4,7 +4,7 @@ import loginImg from "../../assets/login.png";
 import axios from "axios";
 
 export const Login = () => {
-  const url = "https://frightful-phantom-89997.herokuapp.com";
+  const url = "http://localhost:5000";
 
   const [error, setError] = useState("");
 

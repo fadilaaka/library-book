@@ -14,7 +14,7 @@ export const ListPeminjaman = () => {
   const navigate = useNavigate();
   const [isOpened, setIsOpened] = useState(false);
 
-  const url = "https://frightful-phantom-89997.herokuapp.com";
+  const url = "http://localhost:5000";
 
   const [idAnggota, setIdUser] = useState();
   const [dataBuku, setDataBuku] = useState([]);
@@ -77,7 +77,7 @@ export const ListPeminjaman = () => {
                 <div key={index}>
                   <div className="my-10 flex flex-col bg-zinc-100 items-center rounded-md shadow-md md:flex-row w-1/2 h-64 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mr-2">
                     <img
-                      src={`https://frightful-phantom-89997.herokuapp.com/${buku.imageUrl}`}
+                      src={`http://localhost:5000/${buku.imageUrl}`}
                       className="w-48 h-auto float-right"
                     />
                     <div className="flex flex-col text-justify p-4 ml-5 leading-normal w-full mr-3">
