@@ -204,7 +204,7 @@ export const LandingPage = () => {
                       key={index}
                       className="w-48 m-2 bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
                     >
-                      <a href={`/peminjaman/${buku._id}`}>
+                      <a href={`/peminjamanBuku/${buku._id}`}>
                         <img
                           className="rounded-t-lg"
                           src={`http://localhost:5000/${buku.imageUrl}`}
@@ -213,7 +213,7 @@ export const LandingPage = () => {
                       </a>
                       <div className="p-2 text-center">
                         <a
-                          href={`/peminjaman/${buku._id}`}
+                          href={`/peminjamanBuku/${buku._id}`}
                           className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-gray-900  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         >
                           Selengkapnya

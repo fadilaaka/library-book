@@ -35,7 +35,7 @@ export const Registrasi = () => {
         <div className="w-screen h-screen flex justify-center items-center">
           <div className="bg-gray-700 flex flex-row w-5/6 h-5/6 lg:h-3/4 rounded-3xl">
             <form className="max-w-[650px] w-full h-4/5 mx-auto px-8 py-2 lg:py-3 rounded-lg">
-              <h2 className="text-2xl lg:text-4xl text-white font-bold text-center p-1 mt-2 lg:p-5">
+              <h2 className="text-2xl lg:text-4xl text-white font-bold text-center lg:p-5">
                 SIGN UP
               </h2>
               <div className="flex flex-col lg:flex-row">
@@ -99,7 +99,7 @@ export const Registrasi = () => {
 
               <div className="text-center py-0 mx-1 lg:py-2">
                 <button
-                  className="w-full my-4 lg:my-5 py-2 bg-zinc-200 shadow-lg shadow-grey-500/50 hover:bg-zinc-300 hover:shadow-gray-500/70 font-semibold rounded-lg"
+                  className="w-full my-4 lg:my-3 py-2 bg-zinc-200 shadow-lg shadow-grey-500/50 hover:bg-zinc-300 hover:shadow-gray-500/70 font-semibold rounded-lg"
                   onClick={registerAkun}
                 >
                   Daftar

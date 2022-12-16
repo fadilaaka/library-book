@@ -46,7 +46,7 @@ export const Login = () => {
             <form className="max-w-[400px] w-full h-4/5 my-auto mx-auto p-4 px-4 rounded-lg">
               {error && (
                 <div
-                  className="bg-red-100 rounded-lg py-5 px-6 text-base text-red-700 mt-[-40px]"
+                  className="bg-red-100 rounded-lg p-5 my-10 text-base text-red-700 mt-[-40px]"
                   role="alert"
                 >
                   {error}
