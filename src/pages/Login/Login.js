@@ -25,8 +25,16 @@ export const Login = () => {
         username: username,
         password: password,
       });
-      console.log(res);
-      await localStorage.setItem("user-info", JSON.stringify(res.data.anggota));
+      console.log("ini res login :", res);
+      const arrayDataLogin = {
+        name: res.data.anggota.name,
+        alamat: res.data.anggota.alamat,
+        telp: res.data.anggota.telp,
+        code: res.data.anggota.code,
+        imageUrl: res.data.anggota.imageUrl,
+      };
+
+      await localStorage.setItem("user-info", JSON.stringify(arrayDataLogin));
       navigate("/dashboard");
     } catch (error) {
       setError(error.response.data.message);
@@ -41,7 +49,7 @@ export const Login = () => {
             <img
               className="h-40 lg:h-96 inline-flex items-center m-5 mt-5 m-auto lg:m-14"
               src={loginImg}
-              alt=""
+              alt="gambar buku"
             />
             <form className="max-w-[400px] w-full h-4/5 my-auto mx-auto p-4 px-4 rounded-lg">
               {error && (
