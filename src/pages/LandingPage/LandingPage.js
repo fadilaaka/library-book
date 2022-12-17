@@ -72,7 +72,7 @@ export const LandingPage = () => {
       </a>
       <section className="flex">
         <div className="overflow-y-auto py-4 px-3 bg-gray-50 dark:bg-gray-800 min-h-screen w-72">
-          {dataUser.imageUrl !== "" ? (
+          {dataUser && dataUser.imageUrl !== "" ? (
             <div className="flex flex-wrap justify-center my-2">
               <div className="w-50 px-4">
                 <img

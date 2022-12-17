@@ -27,7 +27,7 @@ export const Sidebar = ({ jenis }) => {
                 <li>
                   <a
                     href={`#${item.title}`}
-                    className="text-white hover:underline"
+                    className="text-black dark:text-white hover:underline"
                   >
                     <FontAwesomeIcon icon={faSquareCaretRight} /> {item.title}
                   </a>

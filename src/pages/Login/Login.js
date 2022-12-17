@@ -26,7 +26,8 @@ export const Login = () => {
         password: password,
       });
       console.log("ini res login :", res);
-      const arrayDataLogin = {
+      const objectDataLogin = {
+        _id: res.data.anggota._id,
         name: res.data.anggota.name,
         alamat: res.data.anggota.alamat,
         telp: res.data.anggota.telp,
@@ -34,7 +35,7 @@ export const Login = () => {
         imageUrl: res.data.anggota.imageUrl,
       };
 
-      await localStorage.setItem("user-info", JSON.stringify(arrayDataLogin));
+      await localStorage.setItem("user-info", JSON.stringify(objectDataLogin));
       navigate("/dashboard");
     } catch (error) {
       setError(error.response.data.message);
