@@ -5,19 +5,13 @@ import bookImg from "../../assets/book.jpg";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleUp } from "@fortawesome/free-solid-svg-icons";
-import { Collapse } from "react-collapse";
+import { Sidebar } from "../../components/Sidebar";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
-  const [isOpened, setIsOpened] = useState(false);
-
-  const triggerOpen = () => {
-    isOpened === false ? setIsOpened(true) : setIsOpened(false);
-  };
 
   const [dataJenis, setDataJenis] = useState([]);
   const [dataKategori, setDataKategori] = useState([]);
@@ -60,7 +54,7 @@ export const LandingPage = () => {
 
   console.log(dataJenis);
   console.log("ini kategori : ", dataKategori);
-  console.log(dataUser);
+  console.log("Ini data user : ", dataUser);
 
   const logoutAkun = async (e) => {
     localStorage.removeItem("user-info");
@@ -78,10 +72,32 @@ export const LandingPage = () => {
       </a>
       <section className="flex">
         <div className="overflow-y-auto py-4 px-3 bg-gray-50 dark:bg-gray-800 min-h-screen w-72">
-          <img src={userImg} className="mr-3 h-24 p-2" alt="" />
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            {dataUser && dataUser.name}
-          </span>
+          {dataUser.imageUrl !== "" ? (
+            <div className="flex flex-wrap justify-center my-2">
+              <div className="w-50 px-4">
+                <img
+                  src={`${url}/${dataUser && dataUser.imageUrl}`}
+                  alt="..."
+                  className="shadow rounded-full max-w-full h-auto align-middle border-none"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-wrap justify-center my-2">
+              <div className="w-50 px-4">
+                <img
+                  src={userImg}
+                  className="shadow max-w-full rounded-full h-auto align-middle border-none"
+                  alt="profil anonim"
+                />
+              </div>
+            </div>
+          )}
+          <div className="text-center">
+            <span className="text-xl font-semibold whitespace-nowrap dark:text-white">
+              {dataUser && dataUser.name}
+            </span>
+          </div>
           <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
             <li>
               <a
@@ -97,35 +113,10 @@ export const LandingPage = () => {
           <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
             {dataJenis &&
               dataJenis.map((jenis, index) => (
-                <li key={index}>
-                  <button
-                    onClick={triggerOpen}
-                    className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                  >
-                    <FontAwesomeIcon icon={faBookOpen} />
-                    <span className="flex-1 ml-3 whitespace-nowrap">
-                      {jenis.title}
-                    </span>
-                  </button>
-                  <Collapse isOpened={isOpened}>
-                    {jenis.idKategori &&
-                      jenis.idKategori.map((item, index) => (
-                        <ul key={index}>
-                          <li>
-                            <a
-                              href={`#${item.title}`}
-                              className="text-slate-500"
-                            >
-                              {item.title}
-                            </a>
-                          </li>
-                        </ul>
-                      ))}
-                  </Collapse>
-                </li>
+                <Sidebar key={index} jenis={jenis} />
               ))}
           </ul>
-          <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
+          <ul className="text-start pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
             <li>
               <Link
                 to="/list-peminjaman"
