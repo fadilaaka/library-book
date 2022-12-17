@@ -73,7 +73,7 @@ export const PeminjamanBuku = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg></a>
               </div>
-              <div className="book-description px-12 pt-5 pb-12 mr-10">
+              <div className="book-description px-12 pt-3 pb-12 mr-10">
                 <h3 className="title text-3xl py-2 mt-5">{dataBuku && dataBuku.title}</h3>
                 <h3 className="author text-xl py-2">{dataBuku && dataBuku.author}</h3>
                 <h4 className="publish-date text-md py-1">{dataBuku && dataBuku.isbn}</h4>
@@ -91,12 +91,12 @@ export const PeminjamanBuku = () => {
                 />
               </div>
               {idAnggota !== "" ? 
-                (<button onClick={tombolPinjamBuku} className="rounded-full p-2 my-5 bg-slate-800 text-white w-full">Pinjam Buku</button> )
-                : (<a href="../login"><button className="rounded-full p-2 my-5 bg-slate-500 hover:bg-slate-600 text-white w-full pointer-events-none">Login </button></a>)
+                (<button onClick={tombolPinjamBuku} className="rounded-full p-2 mt-5 mb-3 bg-slate-800 text-white w-full">Pinjam Buku</button> )
+                : (<a href="../login"><button className="rounded-full p-2 mt-5 mb-3 bg-slate-500 hover:bg-slate-600 text-white w-full pointer-events-none">Login </button></a>)
               }
               
               {cekPost === 201 ? (
-                <div class="p-2 mb-4 text-center text-sm text-cyan-900 border border-slate-200 bg-blue-100 rounded-full dark:bg-blue-200 dark:text-blue-800" role="alert">
+                <div class="p-2 mb-4 text-center text-sm text-cyan-900 border bg-blue-100 rounded-full dark:bg-blue-200 dark:text-blue-800" role="alert">
                   <span class="font-medium">Berhasil Meminjam</span>
                 </div>
               ) : ""
