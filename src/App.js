@@ -3,6 +3,7 @@ import { LandingPage } from "./pages/LandingPage/LandingPage";
 import { Registrasi } from "./pages/Registrasi/Registrasi";
 import { Login } from "./pages/Login/Login";
 import ListdiPinjam from "./pages/ListdiPinjam/ListdiPinjam";
+import { PeminjamanBuku } from "./pages/PeminjamanBuku/PeminjamanBuku";
 
 function App() {
   return (
