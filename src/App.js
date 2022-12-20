@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { LandingPage } from "./pages/LandingPage/LandingPage";
 import { Registrasi } from "./pages/Registrasi/Registrasi";
 import { Login } from "./pages/Login/Login";
+import ListdiPinjam from "./pages/ListdiPinjam/ListdiPinjam";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/dashboard" element={<LandingPage />} />
         <Route path="/registrasi" element={<Registrasi />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/listPeminjamanBuku" element={<ListdiPinjam />} />
       </Routes>
     </div>
   );
