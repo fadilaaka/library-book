@@ -14,6 +14,7 @@ function App() {
         <Route path="/registrasi" element={<Registrasi />} />
         <Route path="/login" element={<Login />} />
         <Route path="/listPeminjamanBuku" element={<ListdiPinjam />} />
+        <Route path="/peminjamanBuku/:idBook" element={<PeminjamanBuku/>}/>
       </Routes>
     </div>
   );
