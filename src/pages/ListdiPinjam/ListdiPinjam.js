@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"; 
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Result } from "postcss";
 
 
 const ListdiPinjam = () => {
   const [DataPeminjaman, setDataPeminjaman] = useState([])
+  
   const  getDataPeminjaman = (userid) => {
     axios.get(`http://localhost:5000/v1/api/list-peminjaman/${userid}`)
     .then(result=>{
@@ -13,6 +13,7 @@ const ListdiPinjam = () => {
       setDataPeminjaman(result.data.anggota)
     })
   }
+  
   useEffect(()=>{
     if (localStorage.getItem("user-info")!== null){
       const idAnggota = JSON.parse(localStorage.getItem("user-info"))
@@ -54,6 +55,9 @@ const ListdiPinjam = () => {
               <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
                 Tanggal Pengembalian 
               </th>
+              <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                Status
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -79,6 +83,9 @@ const ListdiPinjam = () => {
               </td>
               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                 {result.tanggalPengembalian.split("T")[0]}
+              </td>
+              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                {result.status}
               </td>
               </tr>
       
