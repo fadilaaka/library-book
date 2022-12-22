@@ -12,7 +12,8 @@ export const Registrasi = () => {
 
   const fileRef = useRef(null);
 
-  const url = "http://localhost:5000";
+  // const url = "http://localhost:5000";
+  const url = "https://incredible-complete-soybean.glitch.me";
 
   const [successRegistration, setSuccessRegistration] = useState();
   const [loading, setLoading] = useState(false);

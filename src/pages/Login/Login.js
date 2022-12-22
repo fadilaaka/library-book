@@ -4,7 +4,8 @@ import loginImg from "../../assets/login.png";
 import axios from "axios";
 
 export const Login = () => {
-  const url = "http://localhost:5000";
+  // const url = "http://localhost:5000";
+  const url = "https://incredible-complete-soybean.glitch.me";
 
   const [error, setError] = useState("");
 

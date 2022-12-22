@@ -17,7 +17,8 @@ export const LandingPage = () => {
   const [dataKategori, setDataKategori] = useState([]);
   const [dataUser, setDataUser] = useState([]);
 
-  const url = "http://localhost:5000";
+  // const url = "http://localhost:5000";
+  const url = "https://incredible-complete-soybean.glitch.me";
 
   const getJenis = async () => {
     try {
@@ -198,7 +199,7 @@ export const LandingPage = () => {
                       <a href={`/peminjamanBuku/${buku._id}`}>
                         <img
                           className="rounded-t-lg"
-                          src={`http://localhost:5000/${buku.imageUrl}`}
+                          src={`${url}/${buku.imageUrl}`}
                           alt=""
                         />
                       </a>
