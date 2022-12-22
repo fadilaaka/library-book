@@ -63,7 +63,7 @@ export const PeminjamanBuku = () => {
     return (
       <>
         <div className="App h-full lg:h-screen bg-slate-900 p-20">
-          <div className="card flex flex-col md:flex-row lg:flex-row block bg-white rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          <div className="card flex flex-col md:flex-row lg:flex-row block bg-white rounded-lg shadow-md hover:bg-gray-100">
             <div className="left-section w-full md:w-2/6 lg:w-2/6 h-[500px] md:max-h-[500px] lg:max-h-[500px] rounded-l-lg">
               <img className="lg:h-full md:h-full sm:h-full rounded-tl-lg rounded-tr-lg md:rounded-tr-none lg:rounded-tr-none md:rounded-bl-lg lg:rounded-bl-lg" src={`http://localhost:5000/${dataBuku && dataBuku.imageUrl}`} alt="cover-book"></img>
             </div>
@@ -96,7 +96,7 @@ export const PeminjamanBuku = () => {
               }
               
               {cekPost === 201 ? (
-                <div className="p-2 mb-4 md:mb-1 text-center text-sm text-cyan-900 border bg-blue-100 rounded-full dark:bg-blue-200 dark:text-blue-800" role="alert">
+                <div className="p-2 mb-4 md:mb-1 text-center text-sm text-cyan-900 border bg-blue-100 rounded-full" role="alert">
                   <span className="font-medium">Berhasil Meminjam</span>
                 </div>
               ) : ""
