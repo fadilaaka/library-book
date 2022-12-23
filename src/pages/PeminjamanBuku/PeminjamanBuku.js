@@ -11,7 +11,8 @@ export const PeminjamanBuku = () => {
   const [cekPost, setCekPost] = useState("");
   const [cekJumlahPeminjaman, setCekJumlahPeminjaman] = useState("");
 
-  const url = "http://localhost:5000";
+  // const url = "http://localhost:5000";
+  const url = "https://incredible-complete-soybean.glitch.me";
 
   const getDetailBuku = async (id) => {
     try {
@@ -80,7 +81,7 @@ export const PeminjamanBuku = () => {
           <div className="left-section w-full md:w-2/6 lg:w-2/6 h-[500px] md:max-h-[500px] lg:max-h-[500px] rounded-l-lg">
             <img
               className="lg:h-full md:h-full sm:h-full rounded-tl-lg rounded-tr-lg md:rounded-tr-none lg:rounded-tr-none md:rounded-bl-lg lg:rounded-bl-lg"
-              src={`http://localhost:5000/${dataBuku && dataBuku.imageUrl}`}
+              src={`${url}/${dataBuku && dataBuku.imageUrl}`}
               alt="cover-book"
             ></img>
           </div>
