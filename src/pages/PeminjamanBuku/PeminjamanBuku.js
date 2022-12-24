@@ -11,8 +11,8 @@ export const PeminjamanBuku = () => {
   const [cekPost, setCekPost] = useState("");
   const [cekJumlahPeminjaman, setCekJumlahPeminjaman] = useState("");
 
-  const url = "http://localhost:5000";
-  // const url = "https://incredible-complete-soybean.glitch.me";
+  // const url = "http://localhost:5000";
+  const url = "https://incredible-complete-soybean.glitch.me";
 
   const getDetailBuku = async (id) => {
     try {
